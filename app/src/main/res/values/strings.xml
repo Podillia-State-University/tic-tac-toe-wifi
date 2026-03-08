@@ -1,3 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">tic-tac-toe-wifi</string>
+    <string name="app_name">Tic-Tac Connect</string>
+
+    <string name="title_main">TIC-TAC\nCONNECT</string>
+    <string name="subtitle_main">Гра по Hotspot</string>
+    <string name="btn_play_hotspot">ГРАТИ З ДРУГОМ (HOTSPOT)</string>
+    <string name="btn_play_single">ОДИНОЧНА ГРА</string>
+    <string name="btn_settings">НАЛАШТУВАННЯ</string>
+
+    <string name="btn_restart">РЕСТАРТ</string>
+    <string name="player_you_x">ВИ (X)</string>
+    <string name="player_you_o">ВИ (O)</string>
+    <string name="player_ai_x">ШІ (X)</string>
+    <string name="player_ai_o">ШІ (O)</string>
+
+    <string name="stats_collapsed">СТАТИСТИКА ▶</string>
+    <string name="stats_expanded">СТАТИСТИКА ▼</string>
+    <string name="stats_wins">Перемог: %1$d</string>
+    <string name="stats_draws">Нічиїх: %1$d</string>
+    <string name="stats_losses">Поразок: %1$d</string>
+
+    <string name="msg_you_win">Ви перемогли!</string>
+    <string name="msg_ai_win">ШІ переміг!</string>
+    <string name="msg_draw">Нічия!</string>
+    <string name="msg_timeout">Час вийшов! Ви програли.</string>
+
+    <string name="title_lobby">ПОШУК СУПЕРНИКА</string>
+    <string name="status_idle">Оберіть метод підключення</string>
+    <string name="status_searching">Пошук через %1$s…</string>
+    <string name="status_hosting">Сервер %1$s створено. Очікування гравця…</string>
+    <string name="instruction_lobby">Переконайтеся, що на обох пристроях обрано однаковий метод з\'єднання.</string>
+    <string name="status_connecting">Підключення…</string>
+
+    <string name="btn_create_game">СТВОРИТИ ГРУ (ХОСТ)</string>
+    <string name="btn_scan">СКАНУВАТИ (КЛІЄНТ)</string>
+    <string name="btn_stop_scanning">ЗУПИНИТИ СКАНУВАННЯ</string>
+    <string name="btn_cancel">СКАСУВАТИ</string>
+    <string name="radio_wifi_direct">Wi-Fi Direct</string>
+    <string name="radio_hotspot">Hotspot (Точка доступу)</string>
+
+    <string name="title_settings">Налаштування</string>
+    <string name="hint_player_name">Ваше ім\'я (для мультиплеєра)</string>
+
+    <string name="label_game_style">Стиль фішок</string>
+    <string name="style_classic">Х та О</string>
+    <string name="style_pets">Коти/Собаки</string>
+
+    <string name="label_difficulty">Рівень складності (проти бота)</string>
+    <string name="label_volume">Гучність ефектів</string>
+
+    <string name="label_vibration">Вібрація при ході</string>
+    <string name="switch_on">Вкл</string>
+    <string name="switch_off">Викл</string>
+
+    <string name="btn_save">Зберегти</string>
+
+    <string name="txt_default_player">Гравець</string>
+    <string name="txt_settings_saved">Налаштування збережено!</string>
+
+    <string name="perms_granted_wifi_direct">Дозволи надано. Можна використовувати Wi‑Fi Direct!</string>
+    <string name="perms_denied_wifi_direct">Без дозволів Wi‑Fi Direct не працюватиме.</string>
+    <string name="perms_needed_wifi_direct">Необхідні дозволи для Wi‑Fi Direct!</string>
+    <string name="scanning_permissions_needed">Необхідні дозволи для сканування!</string>
+    <string name="toast_search_started">Пошук розпочато…</string>
+    <string name="discover_failure">Помилка пошуку: %1$d</string>
+    <string name="device_hotspot_sample">Hotspot Device 1</string>
+    <string name="p2p_group_created">P2P групу створено!</string>
+    <string name="p2p_group_create_failed">Помилка створення P2P: %1$d</string>
+    <string name="starting_server_hotspot">Запуск сервера (Hotspot)…</string>
+    <string name="suffix_wifi_direct"> (Wi-Fi Direct)</string>
+    <string name="connected_starting_game">З\'єднання встановлено. Запуск гри…</string>
+    <string name="connecting_to_device">Підключення до %1$s…</string>
+    <string name="connection_failure">Помилка підключення</string>
+    <string name="p2p_connecting">P2P З\'єднання встановлюється…</string>
+    <string name="wifi_direct_disabled">Wi-Fi Direct вимкнено!</string>
+    <string name="game_started_server">Гру розпочато!</string>
+    <string name="game_started_client">Гру розпочато (як Клієнт)!</string>
+    <string name="socket_connection_failed">Не вдалося відкрити Socket-з\'єднання</string>
+    <string name="player_joined">Гравець приєднався! Запуск гри…</string>
+
+    <string name="server_info_title">ДАНІ ДЛЯ ПІДКЛЮЧЕННЯ</string>
+    <string name="server_name_format">Ім\'я пристрою: %1$s</string>
+    <string name="hint_wifi_direct_accept">Wi-Fi Direct: Очікуйте запит на підключення від клієнта та натисніть "Прийняти".</string>
+    <string name="hint_hotspot_settings">Hotspot: Клієнт має підключитися до вашого Wi-Fi. (Пароль шукайте в налаштуваннях точки доступу вашого телефону).</string>
+
 </resources>
