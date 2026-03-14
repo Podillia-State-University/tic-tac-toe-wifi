@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -37,14 +38,23 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        etPlayerName = findViewById(R.id.etPlayerName);
+        toggleStyle = findViewById(R.id.toggleStyle);
+        sliderDifficulty = findViewById(R.id.sliderDifficulty);
+        sliderVolume = findViewById(R.id.sliderVolume);
+        switchVibration = findViewById(R.id.switchVibration);
+
+        MaterialButton btnSaveSettings = findViewById(R.id.btnSaveSettings);
 
         loadSettings();
-    }
 
+        btnSaveSettings.setOnClickListener(v -> saveSettings());
+    }
     private void loadSettings() {
+        // etPlayerName = findViewById(R.id.etPlayerName);
+        String savedName = preferences.getString(KEY_PLAYER_NAME, String.valueOf(R.string.txt_default_player));
 
     }
-
     private void saveSettings() {
 
     }
