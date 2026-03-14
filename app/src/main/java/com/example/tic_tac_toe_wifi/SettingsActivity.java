@@ -37,12 +37,21 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        etPlayerName = findViewById(R.id.etPlayerName);
+        toggleStyle = findViewById(R.id.toggleStyle);
+        sliderDifficulty = findViewById(R.id.sliderDifficulty);
+        sliderVolume = findViewById(R.id.sliderVolume);
+        switchVibration = findViewById(R.id.switchVibration);
+
+        MaterialButton btnSaveSettings = findViewById(R.id.btnSaveSettings);
 
         loadSettings();
+
+        btnSaveSettings.setOnClickListener(V->saveSettings());
     }
 
     private void loadSettings() {
-
+        String savedName = prefereneces.getSring(KEY_PLAYER_NAME, String.valuueOf(R.string.));
     }
 
     private void saveSettings() {
