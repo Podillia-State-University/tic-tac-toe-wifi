@@ -84,4 +84,7 @@
     <string name="hint_wifi_direct_accept">Wi-Fi Direct: Очікуйте запит на підключення від клієнта та натисніть "Прийняти".</string>
     <string name="hint_hotspot_settings">Hotspot: Клієнт має підключитися до вашого Wi-Fi. (Пароль шукайте в налаштуваннях точки доступу вашого телефону).</string>
 
+    <string name="device_status_available">Доступний для гри</string>
+    <string name="btn_start_game">Почати гру</string>
+
 </resources>
