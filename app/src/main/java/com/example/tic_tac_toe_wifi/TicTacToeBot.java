@@ -1,5 +1,7 @@
 package com.example.tic_tac_toe_wifi;
 
+import java.util.ArrayList;
+
 public class TicTacToeBot {
 
     private final int[][] winPositions = {
@@ -8,33 +10,28 @@ public class TicTacToeBot {
             {0, 4, 8}, {2, 4, 6}
     };
 
-    /**
-     * Головний метод для отримання найкращого ходу бота.
-     * Маршрутизує виклик до відповідного алгоритму на основі рівня складності.
-     *
-     * @param gameState Поточний стан дошки, де: 0 - пусто, 1 - гравець (людина), 2 - бот.
-     * @param aiLevel Рівень складності (1-5).
-     * @return Індекс клітинки (0-8) для наступного ходу, або -1, якщо вільних клітинок немає.
-     *
-     * ЗАВДАННЯ:
-     * 1. Використовуйте switch за aiLevel.
-     * 2. Для рівня 1 → викликайте getRandomMove()
-     * 3. Для рівня 2 → викликайте getSmartRandomMove(gameState, 0.3)
-     * 4. Для рівня 3 → викликайте getSmartRandomMove(gameState, 0.6)
-     * 5. Для рівня 4 → викликайте getBestMoveSimple()
-     * 6. Для рівня 5 → викликайте getBestMoveMinimax()
-     * 7. Для будь-якого іншого рівня → повертайте випадковий хід.
-     */
 
-    /**
-     * Робить повністю випадковий хід у будь-яку доступну вільну клітинку.
-     *
-     * ЗАВДАННЯ:
-     * 1. Створіть ArrayList<Integer> emptySpots.
-     * 2. Пройдіться по gameState і додайте всі індекси, де gameState[i] == 0.
-     * 3. Якщо список порожній — поверніть -1.
-     * 4. Інакше поверніть випадковий елемент зі списку (використовуйте Random).
-     */
+    private int getBestMove( int[] gameState, int aiLevel) {
+        switch (aiLevel) {
+            case 1: return getRandomMove(gameState);
+            case 2: return getSmartRandomMove(gameState, 0.3);
+            case 3: return getSmartRandomMove(gameState, 0.6);
+            case 4: return 1;
+            case 5: return 1;
+            default:return 1;
+        }
+    }
+
+
+    private int getRandomMove(int[] gameState) {
+        ArrayList<Integer> emptySlots = new ArrayList<>();
+        for (int i = 0; i < 9; i++) {
+            if(gameState[i] == 0) emptySlots.add(i);
+        }
+        if (emptySlots.isEmpty()) return -1;
+
+        return emptySlots.get(new Random().nextInt(emptySlots.size()));
+    }
 
     /**
      * Комбінований підхід: з певною ймовірністю робить логічний хід,
@@ -45,6 +42,38 @@ public class TicTacToeBot {
      * 2. Якщо воно менше за probability — викличте getBestMoveSimple().
      * 3. Якщо getBestMoveSimple() повернув -1 або ймовірність не спрацювала — викличте getRandomMove().
      */
+    private int getSmartRandomMove(int[] gameState, double probability) {
+        if (new Random().nextDouble() < probability) {
+            int best = 1; // TODO кращий хід ?
+            if (best != -1) return best;
+        }
+        return getRandomMove(gameState);
+    }
+
+    private int getBestMoveSimple(int[] gameState) {
+        for (int i = 0; i < 9; i++) {
+            if (gameState[i] == 0) {
+                gameState[i] = 2;
+                if(isWinningState(gameState, 2)) {
+                    gameState[i] = 0
+                    return i;
+                }
+                gameState[i] = 0;
+            }
+        }
+        return
+    }
+
+
+    private boolean isWinningState(int[] gameState, int player) {
+        for(int[] win: winPositions) {
+            if(gameState[win[0]] == player &&
+                gameState[win[1]] == player &&
+                gameState[win[2]] == player){
+                return true;
+            }
+        }
+    }
 
     /**
      * Проста евристична логіка (рівень 4).
