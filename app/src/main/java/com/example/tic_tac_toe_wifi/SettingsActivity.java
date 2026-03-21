@@ -49,12 +49,17 @@ public class SettingsActivity extends AppCompatActivity {
         loadSettings();
 
         btnSaveSettings.setOnClickListener(v -> saveSettings());
-    }
-    private void loadSettings() {
-        // etPlayerName = findViewById(R.id.etPlayerName);
-        String savedName = preferences.getString(KEY_PLAYER_NAME, String.valueOf(R.string.txt_default_player));
 
+
+
+
+        loadSettings();
     }
+
+    private void loadSettings() {
+        String savedName = preferences.getString(KEY_PLAYER_NAME, String.valueOf(R.string.txt_default_player));
+    }
+
     private void saveSettings() {
 
     }
