@@ -24,11 +24,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Samsung Galaxy S23"
+        android:text="Samsung Galaxy"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnStartGame"
         app:layout_constraintStart_toEndOf="@id/ivDeviceIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,12 +38,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:text="Доступний для гри"
+        android:text="@string/device_status_available"
         android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnStartGame"
         app:layout_constraintStart_toEndOf="@id/ivDeviceIcon"
         app:layout_constraintTop_toBottomOf="@id/tvDeviceName" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_start_game"
+        android:visibility="gone"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
