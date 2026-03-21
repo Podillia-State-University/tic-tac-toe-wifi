@@ -45,16 +45,16 @@ public class SettingsActivity extends AppCompatActivity {
         switchVibration = findViewById(R.id.switchVibration);
 
         MaterialButton btnSaveSettings = findViewById(R.id.btnSaveSettings);
-
         loadSettings();
-
-        btnSaveSettings.setOnClickListener(v -> saveSettings());
+        btnSaveSettings.setOnClickListener( v -> saveSettings());
     }
+
     private void loadSettings() {
-        // etPlayerName = findViewById(R.id.etPlayerName);
+
         String savedName = preferences.getString(KEY_PLAYER_NAME, String.valueOf(R.string.txt_default_player));
 
     }
+
     private void saveSettings() {
 
     }
