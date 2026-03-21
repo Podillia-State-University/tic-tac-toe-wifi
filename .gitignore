@@ -1,4 +1,5 @@
 # --- Системні файли ---
+.git
 .DS_Store
 Thumbs.db
 *.swp
