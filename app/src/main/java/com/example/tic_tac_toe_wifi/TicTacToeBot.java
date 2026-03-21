@@ -1,5 +1,8 @@
 package com.example.tic_tac_toe_wifi;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class TicTacToeBot {
 
     private final int[][] winPositions = {
@@ -25,6 +28,17 @@ public class TicTacToeBot {
      * 6. Для рівня 5 → викликайте getBestMoveMinimax()
      * 7. Для будь-якого іншого рівня → повертайте випадковий хід.
      */
+private int getBestMove(int[] gameState, int aiLevel){
+    switch (aiLevel){
+        case 1: return getRandomMove(gameState);
+        case 2: return getSmartRandomMove(gameState, 0.3);
+        case 3: return getSmartRandomMove(gameState, 0.6);
+        case 4: return 1;
+        case 5: return 1;
+        default:return 1;
+
+    }
+}
 
     /**
      * Робить повністю випадковий хід у будь-яку доступну вільну клітинку.
@@ -35,6 +49,14 @@ public class TicTacToeBot {
      * 3. Якщо список порожній — поверніть -1.
      * 4. Інакше поверніть випадковий елемент зі списку (використовуйте Random).
      */
+    private int getRandomMove(int[] gameState){
+        ArrayList<Integer> emptySpots = new ArrayList<>();
+        for (int i = 0; i < 9; i++) {
+            if (gameState[i] == 0) emptySpots.add(i);
+        }
+        if (emptySpots.isEmpty()) return -1;
+        return  emptySpots.get(new Random().nextInt(emptySpots.size()));
+        }
 
     /**
      * Комбінований підхід: з певною ймовірністю робить логічний хід,
@@ -45,7 +67,57 @@ public class TicTacToeBot {
      * 2. Якщо воно менше за probability — викличте getBestMoveSimple().
      * 3. Якщо getBestMoveSimple() повернув -1 або ймовірність не спрацювала — викличте getRandomMove().
      */
+    private int getSmartRandomMove(int[] gameState, double probability){
+        if(new Random().nextDouble() < probability){
+            int best = getBestMoveSimple(gameState);
+            if (best != -1) return best;
+        }
+        return getRandomMove(gameState);
+    }
 
+    private int getBestMoveSimple(int[] gameState){
+        for (int i = 0; i < 9; i++){
+            if(gameState[i] == 0){
+                gameState[i] = 2;
+                if(isWinningState(gameState, 2)) {
+                    gameState[i] = 0;
+                    return i;
+                }
+                gameState[i] = 0;
+            }
+        }
+        for (int i = 0; i < 9; i++){
+            if(gameState[i] == 0){
+                gameState[i] = 1;
+                if(isWinningState(gameState, 1)) {
+                    gameState[i] = 0;
+                    return i;
+                }
+                gameState[i] = 0;
+            }
+        }
+        return getRandomMove(gameState);
+    }
+
+    private boolean isWinningState(int[] gameState, int player){
+        for(int[] win: winPositions) {
+            if (gameState[win[0]] == player &&
+                    gameState[win[1]] == player &&
+                    gameState[win[2]] == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private int getBestMoveMinimax(int[] gameState){
+
+        return 1;
+    }
+
+    private int Mimimax(){
+        return 1;
+    }
     /**
      * Проста евристична логіка (рівень 4).
      *
